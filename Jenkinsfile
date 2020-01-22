@@ -5,24 +5,12 @@ pipeline {
     dockerImage = ''
   }
   agent any
-  tools {
-          maven 'Maven 3.3.9'
-      }
   stages {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/net-vinothkumar/cicd-k8s-demo.git'
       }
     }
-    stage('Compile') {
-          steps {
-          sh '''
-                echo "PATH = ${PATH}"
-                echo "M2_HOME = ${M2_HOME}"
-             '''
-            sh 'mvn clean install'
-          }
-        }
     stage('Building image') {
       steps{
         script {
