@@ -15,14 +15,14 @@ pipeline {
         }
       }
     }
-    stage('Building image') {
+    stage('Building Docker Image') {
       steps{
         script {
           dockerImage = docker.build registry + ":$BUILD_NUMBER"
         }
       }
     }
-    stage('Push Image') {
+    stage('Push Image To Docker Hub') {
       steps{
         script {
           /* Finally, we'll push the image with two tags:
