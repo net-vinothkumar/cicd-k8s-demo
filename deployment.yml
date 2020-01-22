@@ -5,7 +5,7 @@ metadata:
   labels:
     app: demo-app
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: demo-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: interviewdot/demo-k8s:0.2.0
+        image: interviewdot/cicd-k8s-demo:latest
         ports:
         - containerPort: 8081
 ---

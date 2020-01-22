@@ -6,7 +6,7 @@ pipeline {
   }
   agent any
   stages {
-    stage('Cloning Git') {
+    stage('Compile') {
       steps {
         git 'https://github.com/net-vinothkumar/cicd-k8s-demo.git'
         script{
