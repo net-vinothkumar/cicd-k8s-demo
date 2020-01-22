@@ -9,6 +9,7 @@ pipeline {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/net-vinothkumar/cicd-k8s-demo.git'
+        sh 'mvn clean install'
       }
     }
     stage('Building image') {
