@@ -11,6 +11,11 @@ pipeline {
         git 'https://github.com/net-vinothkumar/cicd-k8s-demo.git'
       }
     }
+    stage('Compile') {
+          steps {
+            sh 'mvn clean install'
+          }
+        }
     stage('Building image') {
       steps{
         script {
