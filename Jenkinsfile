@@ -9,8 +9,10 @@ pipeline {
     stage('Cloning Git') {
       steps {
         git 'https://github.com/net-vinothkumar/cicd-k8s-demo.git'
-        def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
-        sh "${mvnHome}/bin/mvn package"
+        script{
+                def mvnHome = tool name: 'MAVEN_HOME', type: 'maven'
+                sh "${mvnHome}/bin/mvn package"
+        }
       }
     }
     stage('Building image') {
