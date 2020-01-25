@@ -31,7 +31,7 @@ class HelloResource {
 
     @GetMapping("/hello/{name}")
     public ResponseEntity<String> sayHello(@PathVariable String name) {
-        String greeting = String.format("Hello %s - I was built by Jenkins as Docker Image, and Deployed to Kubernetes cluster, Hope you are able to learn CI/CD basics, Thanks friend for your support... - Happy Learning!", name);
+        String greeting = String.format("Hello %s -  I am Deployed to Kubernetes cluster in Google Cloud, Hope you are able to learn GKE basics, Thanks friend for your support... - Happy Learning!", name);
         return ResponseEntity.ok(greeting);
     }
 
